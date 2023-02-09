@@ -19,14 +19,16 @@ public class Recetas {
     
     private String nombre;
     private String ingredientes;
-    private String descripcion;
+    private String preparacion;
     private int tiempo;
     private String dificultad;
 
     @Enumerated(EnumType.STRING)
+    @Column (name = "tipo")
     private Comida tipo;
 
-    @OneToOne
+    @ManyToOne
+    @JoinColumn(name = "usuario_id")
     private Usuario usuario;
 
 }

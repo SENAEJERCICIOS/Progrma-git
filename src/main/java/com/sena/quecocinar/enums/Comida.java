@@ -12,5 +12,7 @@ public enum Comida  {
     Italiana,
     India,
     China,
+    Colombiana,
+    Española,
 
 }

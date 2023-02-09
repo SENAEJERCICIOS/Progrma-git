@@ -2,6 +2,9 @@ package com.sena.quecocinar.model;
 
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.List;
+
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
@@ -15,6 +18,9 @@ public class Usuario {
     private Long id;
 
     private String nombre;
+
+    @OneToMany(mappedBy = "usuario")
+    private List<Recetas> recetas;
 
 
 }
