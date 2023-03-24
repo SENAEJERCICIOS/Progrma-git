@@ -15,12 +15,15 @@ public class RecetasService {
     @Autowired
     RecetasRepository recetasRepository;
 
+
     public List vereceta (){
         List<Recetas> recetass =new ArrayList<Recetas>();
         recetass.addAll(recetasRepository.findAll());
         return recetass;
 
     }
+
+
        public void creaYactualizarreceta(Recetas recetas){
         recetasRepository.save(recetas);
 
