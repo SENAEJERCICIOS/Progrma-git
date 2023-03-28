@@ -1,88 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Recetas</title>
-  <link rel="stylesheet" type="text/css" href="../css/recetas.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recetas</title>
+    <link rel="stylesheet" type="text/css" href="../css/recetas.css">
 </head>
 
 <body>
-  <nav>
+<nav>
     <div class="nav-left">
-      <a href="../index.html">Inicio</a>
+        <a href="../index.html">Inicio</a>
     </div>
     <div class="nav-right">
-      <a href="#">Ingresar</a>
+        <a href="#">Ingresar</a>
     </div>
-  </nav>
-  <details>
+</nav>
+<details>
     <summary>Agregar Receta</summary>
     <div class="card">
-      <!-- Contenido de la tarjeta aquí -->
-      <form>
-        <div>
-          <label for="name">Nombre de la receta</label>
-          <input type="text" id="name" name="name" required>
-        </div>
-    
-        <div>
-          <label for="ingredients">Ingredientes</label>
-          <textarea id="ingredients" name="ingredients" required></textarea>
-        </div>
-    
-        <div>
-          <label for="preparation">Preparación</label>
-          <textarea id="preparation" name="preparation" required></textarea>
-        </div>
-    
-        <div>
-          <label for="timpe">Tiempo de preparación</label>
-          <input type="text" id="tiempo" name="tiempo" required>
-        </div>
-    
-        <div>
-          <label for="dificultad">Dificultad</label>
-          <select id="dificultad" name="dificultad" required>
-            <option value="">Seleccione la dificultad</option>
-            <option value="Fácil">Fácil</option>
-            <option value="Intermedia">Intermedia</option>
-            <option value="Difícil">Difícil</option>
-          </select>
-        </div>
-    
-        <div>
-          <button type="submit">Guardar</button>
-        </div>
-      </form>
+        <!-- Contenido de la tarjeta aquí -->
+        <form>
+            <div>
+                <label for="name">Nombre de la receta</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div>
+                <label for="ingredients">Ingredientes</label>
+                <textarea id="ingredients" name="ingredients" required></textarea>
+            </div>
+
+            <div>
+                <label for="preparation">Preparación</label>
+                <textarea id="preparation" name="preparation" required></textarea>
+            </div>
+
+            <div>
+                <label for="tiempo">Tiempo de preparación</label>
+                <input type="text" id="tiempo" name="tiempo" required>
+            </div>
+
+            <div>
+                <label for="dificultad">Dificultad</label>
+                <select id="dificultad" name="dificultad" required>
+                    <option value="">Seleccione la dificultad</option>
+                    <option value="Fácil">Fácil</option>
+                    <option value="Intermedia">Intermedia</option>
+                    <option value="Difícil">Difícil</option>
+                </select>
+            </div>
+
+            <div>
+                <button type="submit">Guardar</button>
+            </div>
+        </form>
     </div>
-  </details>
-  
+</details>
 
-
-  <table>
+<table>
     <thead>
-      <tr>
+    <tr>
         <th>Nombre</th>
         <th>Ingredientes</th>
         <th>Preparación</th>
         <th>Tiempo</th>
         <th>Dificultad</th>
         <th>Acciones</th>
-      </tr>
+    </tr>
     </thead>
-    <tbody id="recipeList">
-      <!-- Las filas de la tabla se agregarán aquí con JS -->
-      <script src="../"></script>
+    <tbody>
+    <!-- Las filas de la tabla se agregarán aquí  -->
+
+    <tr th:each = "recetas : ${recetas}">
+        <td th:text="${recetas.nombre}">Nombre</td>
+        <td th:text="${recetas.ingredientes}">Ingredientes</td>
+        <td th:text="${recetas.preparacion}">Preparación</td>
+        <td th:text="${recetas.tiempo}">Tiempo</td>
+        <td th:text="${recetas.dificultad}">Dificultad</td>
+
+        <td th:text="${recetas}">Acciones</td>
+    </tr>
 
     </tbody>
-  </table>
-  </div>
+</table>
+</div>
 
-  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
-  <script src="../scripts/client.js"></script>
 </body>
 
 </html>
