@@ -74,20 +74,20 @@
     <tbody>
     <!-- Las filas de la tabla se agregarán aquí  -->
 
-    <tr th:each = "recetas : ${recetas}">
+    <tr th:each="recetas : ${recetas}">
         <td th:text="${recetas.nombre}">Nombre</td>
         <td th:text="${recetas.ingredientes}">Ingredientes</td>
         <td th:text="${recetas.preparacion}">Preparación</td>
         <td th:text="${recetas.tiempo}">Tiempo</td>
         <td th:text="${recetas.dificultad}">Dificultad</td>
 
-        <td th:text="${recetas}">Acciones</td>
-    </tr>
+        <!-- <td th:text="${recetas}">Acciones</td>  -->
+     </tr>
 
-    </tbody>
-</table>
-</div>
+     </tbody>
+ </table>
+ </div>
 
-</body>
+ </body>
 
-</html>
+ </html>
