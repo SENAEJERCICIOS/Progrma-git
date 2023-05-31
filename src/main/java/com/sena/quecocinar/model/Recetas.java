@@ -27,8 +27,6 @@ public class Recetas {
     @Column (name = "tipo")
     private Comida tipo;
 
-    @ManyToOne
-    @JoinColumn(name = "usuario_id")
-    private Usuario usuario;
+
 
 }

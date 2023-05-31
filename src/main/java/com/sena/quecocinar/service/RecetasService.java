@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -22,15 +21,18 @@ public class RecetasService {
         return recetass;
 
     }
-
+    public Recetas buscarPorId(Long id) {
+        return recetasRepository.findById(id).orElse(null);
+    }
 
        public void creaYactualizarreceta(Recetas recetas){
         recetasRepository.save(recetas);
 
     }
     public void eliminareceta (Long id){
-        recetasRepository.deleteAllById(Collections.singleton(id));
-
-
+        recetasRepository.deleteById(id);
     }
+
+
+
 }

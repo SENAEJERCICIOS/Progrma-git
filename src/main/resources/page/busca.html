@@ -19,61 +19,50 @@
         </div>
     </nav>
     <br>
-    <div class="navbar">
-
-        <form class="search-form">
-            <input type="text" class="search-input" placeholder="Receta...">
-            <button type="submit" class="search-button">Buscar</button>
-        </form>
-    </div>
-
     <div class="container">
-        <div class="row">
+        <form id="search-form">
+            <input type="text" id="search-input" name="search-input">
+            <button type="submit" id="search-button">Buscar</button>
+            <button type="button" id="clear-button">Limpiar</button>
+        </form>
+
+        <div class="card" id="result-card">
             <div class="card">
-                <img src="https://via.placeholder.com/150" alt="Imagen de la card">
-                <h2>Título de la card 1</h2>
-                <p>Descripción de la card 1</p>
-            </div>
-            <div class="card">
-                <img src="https://via.placeholder.com/150" alt="Imagen de la card">
-                <h2>Título de la card 2</h2>
-                <p>Descripción de la card 2</p>
-            </div>
-            <div class="card">
-                <img src="https://via.placeholder.com/150" alt="Imagen de la card">
-                <h2>Título de la card 3</h2>
-                <p>Descripción de la card 3</p>
-            </div>
-            <div class="card">
-                <img src="https://via.placeholder.com/150" alt="Imagen de la card">
-                <h2>Título de la card 4</h2>
-                <p>Descripción de la card 4</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="card">
-                <img src="https://via.placeholder.com/150" alt="Imagen de la card">
-                <h2>Título de la card 5</h2>
-                <p>Descripción de la card 5</p>
-            </div>
-            <div class="card">
-                <img src="https://via.placeholder.com/150" alt="Imagen de la card">
-                <h2>Título de la card 6</h2>
-                <p>Descripción de la card 6</p>
-            </div>
-            <div class="card">
-                <img src="https://via.placeholder.com/150" alt="Imagen de la card">
-                <h2>Título de la card 7</h2>
-                <p>Descripción de la card 7</p>
-            </div>
-            <div class="card">
-                <img src="https://via.placeholder.com/150" alt="Imagen de la card">
-                <h2>Título de la card 8</h2>
-                <p>Descripción de la card 8</p>
+                <div class="card-image">
+                    <img src="imagen.jpg" alt="Imagen">
+                </div>
+                <div class="card-content">
+                    <h2>Título</h2>
+                    <h3>Subtítulo 1</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed nulla sagittis, lobortis lorem
+                        vel, tincidunt ipsum. Donec a ex libero.</p>
+                    <h3>Subtítulo 2</h3>
+                    <p>Phasellus auctor semper augue, sed ultricies justo malesuada vel. Morbi eget efficitur nisi. Nam
+                        et odio id velit auctor bibendum eu sed massa.</p>
+                    <h3>Subtítulo 3</h3>
+                    <p>Aliquam lacinia, ex vitae elementum luctus, nibh magna bibendum ex, eu bibendum mauris magna ac
+                        velit. Sed vel dolor dignissim, pretium lorem non, gravida est.</p>
+                </div>
             </div>
         </div>
     </div>
+   
+    <script>
+        const searchForm = document.querySelector('#search-form');
+        const resultCard = document.querySelector('#result-card');
+        const clearButton = document.querySelector('#clear-button');
 
+        searchForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+            resultCard.style.display = 'block';
+        });
+
+        clearButton.addEventListener('click', function () {
+            resultCard.style.display = 'none';
+            searchForm.reset();
+        });
+
+    </script>
 </body>
 
 </html>

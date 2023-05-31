@@ -213,3 +213,81 @@ form {
 form.visible {
   display: block;
 }
+
+body {
+	background: #333;
+	font-family: Arial, sans-serif;
+}
+
+.login-box {
+	width: 300px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: #fff;
+	padding: 30px;
+	border-radius: 5px;
+	box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
+}
+
+.login-box h2 {
+	margin: 0 0 30px;
+	padding: 0;
+	color: #333;
+	text-align: center;
+}
+
+.login-box form {
+	display: flex;
+	flex-direction: column;
+}
+
+.login-box form .user-box {
+	position: relative;
+	margin: 0 0 20px;
+}
+
+.login-box form .user-box input {
+	width: 100%;
+	padding: 10px 0;
+	font-size: 16px;
+	color: #333;
+	border: none;
+	border-bottom: 1px solid #333;
+	outline: none;
+	background: transparent;
+}
+
+.login-box form .user-box label {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 10px 0;
+	font-size: 16px;
+	color: #333;
+	pointer-events: none;
+	transition: all 0.3s ease;
+}
+
+.login-box form .user-box input:focus ~ label,
+.login-box form .user-box input:valid ~ label {
+	top: -20px;
+	left: 0;
+	color: #cc5500;
+	font-size: 12px;
+}
+
+.login-box input[type="submit"] {
+	background: #cc5500;
+	border: none;
+	color: #fff;
+	padding: 10px;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 16px;
+}
+
+.login-box input[type="submit"]:hover {
+	background: #ff7700;
+}

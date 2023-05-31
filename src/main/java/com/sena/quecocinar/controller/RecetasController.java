@@ -1,5 +1,4 @@
 package com.sena.quecocinar.controller;
-
 import com.sena.quecocinar.model.Recetas;
 import com.sena.quecocinar.service.RecetasService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-public class RecetaController {
+public class RecetasController {
 
     @Autowired
     RecetasService recetasService;
